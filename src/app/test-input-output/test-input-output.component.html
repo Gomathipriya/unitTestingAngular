@@ -1,0 +1,32 @@
+<div class="form-horizontal">
+  <h2 class="aligncenter">Sample Form (Template)</h2><br />
+  <div class="row">
+      <div class="col-xs-12 col-sm-2 col-md-2">
+          <span>First Name</span>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+          <input type="text" id="txtFName" placeholder="Enter First Name" #firstName/>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2">
+          <span>Last Name</span>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+          <input type="text" id="txtLName" placeholder="Enter Second Name" #lastName/>
+      </div>
+  </div>
+  <br />
+  <div class="row">
+      <div class="col-xs-12 col-sm-2 col-md-2">
+          <span>Email</span>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+          <input type="email" id="txtEmail" #email/>
+      </div>
+      <div class="col-xs-12 col-sm-2 col-md-2">
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+          <input type="button" id="btnSubmit" value="Submit" class="btn btn-primary" [disabled]="!enabled" 
+                  (click)="onSubmit(firstName.value,lastName.value,email.value)"/>
+      </div>
+  </div>
+</div>
