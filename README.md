@@ -9,3 +9,13 @@ To Override Window
 To test Router
 
 import { RouterTestingModule } from '@angular/router/testing';
+
+TO test DOM Sanitizer
+
+{
+                provide: DomSanitizer,
+                useValue: {
+                    sanitize: () => 'safeString',
+                    bypassSecurityTrustHtml: () => 'safeString'
+                  }
+            }
