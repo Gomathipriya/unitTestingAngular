@@ -10,6 +10,8 @@ To test Router
 
 import { RouterTestingModule } from '@angular/router/testing';
 
+imports: [RouterTestingModule]
+
 TO test DOM Sanitizer
 
 {
