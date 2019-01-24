@@ -4,17 +4,19 @@ To override Provider
 
 To Override Window
 
-(<any>window).screen = { width: 300 };
+<code> (<any>window).screen = { width: 300 }; </code>
   
 To test Router
 
+<pre>
 import { RouterTestingModule } from '@angular/router/testing';
 
 imports: [RouterTestingModule]
+</pre>
 
 TO test DOM Sanitizer
 
-{
+            {
                 provide: DomSanitizer,
                 useValue: {
                     sanitize: () => 'safeString',
@@ -24,7 +26,7 @@ TO test DOM Sanitizer
 
 
 testing service with http client
-
+<pre>
 class MockService {
     public get(_url): Observable<any> {
         return Observable.of({[1]});
@@ -32,7 +34,6 @@ class MockService {
 }
 
 describe('TestService', () => {
-
     let service : TestService;
     beforeEach(() => {
 
@@ -53,3 +54,4 @@ describe('TestService', () => {
         });
     });
 });
+</pre>
