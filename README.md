@@ -21,3 +21,35 @@ TO test DOM Sanitizer
                     bypassSecurityTrustHtml: () => 'safeString'
                   }
             }
+
+
+testing service with http client
+
+class MockService {
+    public get(_url): Observable<any> {
+        return Observable.of({[1]});
+    }
+}
+
+describe('TestService', () => {
+
+    let service : TestService;
+    beforeEach(() => {
+
+        TestBed.configureTestingModule({
+            imports: [HttpModule],
+            providers: [
+                TestService,
+                { provide: MainService, useClass: MockService }
+            ]
+        });
+        service = TestBed.get(TestService);
+    });
+
+    it('get ',()=>{
+        service.get('test').subscribe(result => {
+            let data: any = result;
+            expect(data.length).toBe(1);
+        });
+    });
+});
