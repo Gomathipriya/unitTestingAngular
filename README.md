@@ -58,3 +58,10 @@ describe('TestService', () => {
 
 
 To execute testing for single component change “describe” to “fdescribe”. To execute single test case change “it” to “fit”. This will execute only the specific component and specific test case inside it
+
+For Element Ref
+
+<code> export class MockElementRef extends ElementRef {
+    constructor() { super(null); }
+}
+</code>
