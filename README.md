@@ -65,3 +65,15 @@ For Element Ref
     constructor() { super(null); }
 }
 </code>
+
+For Pipe
+
+<pre>
+  @Pipe({ name: 'telephone' })
+class TelephonePipeMock implements PipeTransform {
+    transform(value: number): number {
+        // blah blah
+        return value;
+    }
+}
+  </pre>
