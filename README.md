@@ -77,3 +77,30 @@ class TelephonePipeMock implements PipeTransform {
     }
 }
   </pre>
+  
+  To test timeout
+  
+  <pre>
+  
+    beforeEach(() => {
+    var timerCallback = jasmine.createSpy("timerCallback");
+    jasmine.clock().install();
+  });
+  
+  afterEach(() => {
+    jasmine.clock().uninstall();
+  });
+  
+  it("causes a timeout to be called", function() {
+  setTimeout(function() {
+    timerCallback();
+  }, 100);
+
+  expect(timerCallback).not.toHaveBeenCalled();
+
+  jasmine.clock().tick(101);
+
+  expect(timerCallback).toHaveBeenCalled();
+});
+  
+  </pre>
