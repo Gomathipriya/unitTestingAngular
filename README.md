@@ -104,3 +104,20 @@ class TelephonePipeMock implements PipeTransform {
 });
   
   </pre>
+  
+  To test redux state
+  
+  <pre>
+  
+  import {MockNgRedux, NgReduxTestingModule} from '@angular-redux/store/lib/testing';
+  
+   imports: [
+                NgReduxModule,
+                NgReduxTestingModule
+            ],
+            providers: [
+                MockNgRedux
+            ]
+            
+   spyOn(MockNgRedux.getInstance(), 'getState').and.returnValue({});
+  </pre>
