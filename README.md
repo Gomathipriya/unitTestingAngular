@@ -121,3 +121,22 @@ class TelephonePipeMock implements PipeTransform {
             
    spyOn(MockNgRedux.getInstance(), 'getState').and.returnValue({});
   </pre>
+  
+  To Test Router
+  
+  <pre>
+  import { RouterTestingModule } from '@angular/router/testing';
+  import { Router } from '@angular/router';
+
+    let router: Router;
+    
+     imports: [
+                RouterTestingModule.withRoutes([])
+            ],
+            
+     router = TestBed.get(Router);
+     
+     let navigateSpy = spyOn(router, 'navigate');
+     expect(navigateSpy).toHaveBeenCalledWith(['/test']);
+
+  </pre>
